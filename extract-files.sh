@@ -49,6 +49,15 @@ while [ "${#}" -gt 0 ]; do
     shift
 done
 
+function blob_fixup() {
+    case "${1}" in
+	vendor/lib64/hw/camera.qcom.so)
+	    sed -i 's/ro.boot.flash.locked/ro.camera.notify_nfc/g' "${2}"
+	    ;;
+    esac
+}
+
+
 if [ -z "${SRC}" ]; then
     SRC="adb"
 fi

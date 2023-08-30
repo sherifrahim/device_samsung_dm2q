@@ -437,7 +437,7 @@ vendor/lib/camera/fdconfigpreviewlite.bin
 vendor/lib/camera/fdconfigsecure.bin
 vendor/lib/camera/fdconfigvideo.bin
 vendor/lib/camera/fdconfigvideolite.bin
-vendor/lib/hw/camera.qcom.so
+vendor/lib/hw/camera.qcom.so|1a5c4c0cd616e2f09916a09842b7682e7b4cbeaa
 vendor/lib/hw/camera.unihal.default.so
 vendor/lib/hw/com.qti.chi.offline.so
 vendor/lib/hw/com.qti.chi.override.so
