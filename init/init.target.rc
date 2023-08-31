@@ -65,9 +65,34 @@ import /vendor/etc/init/hw/init.qti.kernel.rc
 import /vendor/etc/init/hw/init.samsung.rc
 import /vendor/etc/init/hw/init.dm2q.rc
 
+# CAUTION: init.carrier.rc is replaced with init.${ro.product.model}.rc from Q OS
+import /vendor/etc/init/hw/init.${ro.product.vendor.device}.rc
+import /vendor/etc/init/hw/init.${ro.product.vendor.name}.rc
+
 on early-init
     write /proc/sys/kernel/printk_devkmsg ratelimited
     export MEMTAG_OPTIONS off
+
+    # foreground boost enable
+    mkdir /dev/cpuctl/foreground-boost/
+    chown system system /dev/cpuctl/foreground-boost
+    chown system system /dev/cpuctl/foreground-boost/tasks
+    chown system system /dev/cpuctl/foreground-boost/cgroup.procs
+    chmod 0664 /dev/cpuctl/foreground-boost/tasks
+    chmod 0664 /dev/cpuctl/foreground-boost/cgroup.procs
+
+    mkdir /dev/cpuset/foreground-boost
+    copy /dev/cpuset/cpus /dev/cpuset/foreground-boost/cpus
+    copy /dev/cpuset/mems /dev/cpuset/foreground-boost/mems
+
+    chown system system /dev/cpuset/foreground-boost
+    chown system system /dev/cpuset/foreground-boost/tasks
+    chown system system /dev/cpuset/foreground-boost/cgroup.procs
+    chmod 0664 /dev/cpuset/foreground-boost/tasks
+    chmod 0664 /dev/cpuset/foreground-boost/cgroup.procs
+
+    # set property to boost-optimize
+    setprop sys.perf.boostopt true
 
 on init
     wait /dev/block/platform/soc/${ro.boot.bootdevice}
@@ -75,6 +100,13 @@ on init
     chown system system /sys/devices/platform/soc/1d84000.ufshc/auto_hibern8
     chmod 0660 /sys/devices/platform/soc/1d84000.ufshc/auto_hibern8
     start logd
+
+    chown system system /dev/cpuset/foreground/cpus
+    chown system system /dev/cpuset/foreground-boost/cpus
+    chown system system /dev/cpuset/background/cpus
+    chmod 0664 /dev/cpuset/foreground/cpus
+    chmod 0664 /dev/cpuset/foreground-boost/cpus
+    chmod 0664 /dev/cpuset/background/cpus
 
 on early-fs
     start vold
@@ -127,6 +159,38 @@ on boot
     chown system /sys/devices/system/cpu/hyp_core_ctl/enable
     chown system /sys/devices/system/cpu/hyp_core_ctl/hcc_min_freq
 
+    # set cpuset value by performance team
+    write /dev/cpuset/top-app/cpus 0-7
+    write /dev/cpuset/foreground/cpus 0-6
+    write /dev/cpuset/background/cpus 0-2
+    write /dev/cpuset/system-background/cpus 0-2
+    write /dev/cpuset/sf/cpus 0-6
+    write /dev/cpuset/foreground-boost 0-7
+    # write /dev/cpuset/restricted/cpus 0-2
+    # write /dev/cpuset/audio-app/cpus 0-3
+
+    # HyPer Permission
+    chown root system /dev/cpuctl/top-app/cpu.uclamp.min
+    chmod 0664 /dev/cpuctl/top-app/cpu.uclamp.min
+    chown root system /sys/devices/system/cpu/bus_dcvs/DDR/memlat/adaptive_low_freq
+    chmod 0664 /sys/devices/system/cpu/bus_dcvs/DDR/memlat/adaptive_low_freq
+    chown root system /sys/devices/system/cpu/bus_dcvs/DDR/memlat/adaptive_high_freq
+    chmod 0664 /sys/devices/system/cpu/bus_dcvs/DDR/memlat/adaptive_high_freq
+    chown root system /sys/devices/system/cpu/bus_dcvs/DDR/soc:qcom,memlat:ddr:prime-latfloor/max_freq
+    chmod 0664 /sys/devices/system/cpu/bus_dcvs/DDR/soc:qcom,memlat:ddr:prime-latfloor/max_freq
+
+    # Perfmond Atrace Buffer Size
+    setprop debug.perfmond.atrace.buffer 16384
+
+    # System Performance Restricted cpuset
+    chown root system dev/cpuset/restricted/cpus
+    chmod 0664 /dev/cpuset/restricted/cpus
+
+# For CDSP crash
+on property:ro.boot.debug_level=0x494d
+    setprop vendor.fastrpc.process.attrs 0x40000001
+    setprop vendor.fastrpc.debug.trace 1
+
 on property:vendor.display.lcd_density=560
    setprop dalvik.vm.heapgrowthlimit 256m
 
@@ -168,10 +232,10 @@ service vendor.per_proxy /vendor/bin/pm-proxy
     group system
     disabled
 
-service vendor.mdm_helper /vendor/bin/mdm_helper
-    class core
-    group system wakelock
-    disabled
+#service vendor.mdm_helper /vendor/bin/mdm_helper
+#    class core
+#    group system wakelock
+#    disabled
 
 service vendor.mdm_launcher /vendor/bin/sh /vendor/bin/init.mdm.sh
     class core
@@ -197,14 +261,5 @@ on early-boot && property:persist.vendor.pcie.boot_option=*
     write /sys/bus/platform/devices/1c00000.qcom,pcie/debug/boot_option ${persist.vendor.pcie.boot_option}
     write /sys/bus/platform/devices/1c08000.qcom,pcie/debug/boot_option ${persist.vendor.pcie.boot_option}
 
-service fan_control_turn_on /vendor/bin/fan_service 1
-    class late_start
-    user root
-    disabled
-    oneshot
-
-service fan_control_turn_off /vendor/bin/fan_service 0
-    class late_start
-    user root
-    disabled
-    oneshot
+on property:persist.vendor.radio.port_index=""
+    setprop sys.usb.config adb

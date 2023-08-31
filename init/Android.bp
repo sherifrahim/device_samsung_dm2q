@@ -7,266 +7,266 @@
 // Init scripts
 sh_binary {
     name: "hdm_status.sh",
-    src: "bin/hdm_status.sh",
+    src: "hdm_status.sh",
     vendor: true,
 }
 
 sh_binary {
     name: "init.class_main.sh",
-    src: "bin/init.class_main.sh",
+    src: "init.class_main.sh",
     vendor: true,
 }
 
 sh_binary {
     name: "init.crda.sh",
-    src: "bin/init.crda.sh",
+    src: "init.crda.sh",
     vendor: true,
 }
 
 sh_binary {
     name: "init.kernel.post_boot-kalama.sh",
-    src: "bin/init.kernel.post_boot-kalama.sh",
+    src: "init.kernel.post_boot-kalama.sh",
     vendor: true,
 }
 
 sh_binary {
     name: "init.kernel.post_boot.sh",
-    src: "bin/init.kernel.post_boot.sh",
+    src: "init.kernel.post_boot.sh",
     vendor: true,
 }
 
 sh_binary {
     name: "init.mdm.sh",
-    src: "bin/init.mdm.sh",
+    src: "init.mdm.sh",
     vendor: true,
 }
 
 sh_binary {
     name: "init.qcom.class_core.sh",
-    src: "bin/init.qcom.class_core.sh",
+    src: "init.qcom.class_core.sh",
     vendor: true,
 }
 
 sh_binary {
     name: "init.qcom.coex.sh",
-    src: "bin/init.qcom.coex.sh",
+    src: "init.qcom.coex.sh",
     vendor: true,
 }
 
 sh_binary {
     name: "init.qcom.early_boot.sh",
-    src: "bin/init.qcom.early_boot.sh",
+    src: "init.qcom.early_boot.sh",
     vendor: true,
 }
 
 sh_binary {
     name: "init.qcom.efs.sync.sh",
-    src: "bin/init.qcom.efs.sync.sh",
+    src: "init.qcom.efs.sync.sh",
     vendor: true,
 }
 
 sh_binary {
     name: "init.qcom.post_boot.sh",
-    src: "bin/init.qcom.post_boot.sh",
+    src: "init.qcom.post_boot.sh",
     vendor: true,
 }
 
 sh_binary {
     name: "init.qcom.sdio.sh",
-    src: "bin/init.qcom.sdio.sh",
+    src: "init.qcom.sdio.sh",
     vendor: true,
 }
 
 sh_binary {
     name: "init.qcom.sensors.sh",
-    src: "bin/init.qcom.sensors.sh",
+    src: "init.qcom.sensors.sh",
     vendor: true,
 }
 
 sh_binary {
     name: "init.qcom.sh",
-    src: "bin/init.qcom.sh",
+    src: "init.qcom.sh",
     vendor: true,
 }
 
 sh_binary {
     name: "init.qcom.usb.sh",
-    src: "bin/init.qcom.usb.sh",
+    src: "init.qcom.usb.sh",
     vendor: true,
 }
 
 sh_binary {
     name: "init.qti.display_boot.sh",
-    src: "bin/init.qti.display_boot.sh",
+    src: "init.qti.display_boot.sh",
     vendor: true,
 }
 
 sh_binary {
     name: "init.qti.kernel.debug-kalama.sh",
-    src: "bin/init.qti.kernel.debug-kalama.sh",
+    src: "init.qti.kernel.debug-kalama.sh",
     vendor: true,
 }
 
 sh_binary {
     name: "init.qti.kernel.debug.sh",
-    src: "bin/init.qti.kernel.debug.sh",
+    src: "init.qti.kernel.debug.sh",
     vendor: true,
 }
 
 sh_binary {
     name: "init.qti.kernel.early_debug-kalama.sh",
-    src: "bin/init.qti.kernel.early_debug-kalama.sh",
+    src: "init.qti.kernel.early_debug-kalama.sh",
     vendor: true,
 }
 
 sh_binary {
     name: "init.qti.kernel.early_debug.sh",
-    src: "bin/init.qti.kernel.early_debug.sh",
+    src: "init.qti.kernel.early_debug.sh",
     vendor: true,
 }
 
 sh_binary {
     name: "init.qti.kernel.sh",
-    src: "bin/init.qti.kernel.sh",
+    src: "init.qti.kernel.sh",
     vendor: true,
 }
 
 sh_binary {
     name: "init.qti.media.sh",
-    src: "bin/init.qti.media.sh",
+    src: "init.qti.media.sh",
     vendor: true,
 }
 
 sh_binary {
     name: "init.qti.qcv.sh",
-    src: "bin/init.qti.qcv.sh",
+    src: "init.qti.qcv.sh",
     vendor: true,
 }
 
 sh_binary {
     name: "init.qti.write.sh",
-    src: "bin/init.qti.write.sh",
+    src: "init.qti.write.sh",
     vendor: true,
 }
 
 sh_binary {
     name: "init.vendor.sensordebug.sh",
-    src: "bin/init.vendor.sensordebug.sh",
+    src: "init.vendor.sensordebug.sh",
     vendor: true,
 }
 
 sh_binary {
     name: "install-recovery.sh",
-    src: "bin/install-recovery.sh",
+    src: "install-recovery.sh",
     vendor: true,
 }
 
 sh_binary {
     name: "qca6234-service.sh",
-    src: "bin/qca6234-service.sh",
+    src: "qca6234-service.sh",
     vendor: true,
 }
 
 sh_binary {
     name: "system_dlkm_modprobe.sh",
-    src: "bin/system_dlkm_modprobe.sh",
+    src: "system_dlkm_modprobe.sh",
     vendor: true,
 }
 
 sh_binary {
     name: "vendor_modprobe.sh",
-    src: "bin/vendor_modprobe.sh",
+    src: "vendor_modprobe.sh",
     vendor: true,
 }
 
 // Init configuration files
 prebuilt_etc {
     name: "init.dm2q.rc",
-    src: "etc/init.dm2q.rc",
+    src: "init.dm2q.rc",
     sub_dir: "init/hw",
     vendor: true,
 }
 
 prebuilt_etc {
     name: "init.qcom.factory.rc",
-    src: "etc/init.qcom.factory.rc",
+    src: "init.qcom.factory.rc",
     sub_dir: "init/hw",
     vendor: true,
 }
 
 prebuilt_etc {
     name: "init.qcom.rc",
-    src: "etc/init.qcom.rc",
+    src: "init.qcom.rc",
     sub_dir: "init/hw",
     vendor: true,
 }
 
 prebuilt_etc {
     name: "init.qcom.usb.rc",
-    src: "etc/init.qcom.usb.rc",
+    src: "init.qcom.usb.rc",
     sub_dir: "init/hw",
     vendor: true,
 }
 
 prebuilt_etc {
     name: "init.qti.kernel.rc",
-    src: "etc/init.qti.kernel.rc",
+    src: "init.qti.kernel.rc",
     sub_dir: "init/hw",
     vendor: true,
 }
 
 prebuilt_etc {
     name: "init.qti.ufs.rc",
-    src: "etc/init.qti.ufs.rc",
+    src: "init.qti.ufs.rc",
     sub_dir: "init/hw",
     vendor: true,
 }
 
 prebuilt_etc {
     name: "init.samsung.bsp.rc",
-    src: "etc/init.samsung.bsp.rc",
+    src: "init.samsung.bsp.rc",
     sub_dir: "init/hw",
     vendor: true,
 }
 
 prebuilt_etc {
     name: "init.samsung.connector.rc",
-    src: "etc/init.samsung.connector.rc",
+    src: "init.samsung.connector.rc",
     sub_dir: "init/hw",
     vendor: true,
 }
 
 prebuilt_etc {
     name: "init.samsung.display.rc",
-    src: "etc/init.samsung.display.rc",
+    src: "init.samsung.display.rc",
     sub_dir: "init/hw",
     vendor: true,
 }
 
 prebuilt_etc {
     name: "init.samsung.dp.rc",
-    src: "etc/init.samsung.dp.rc",
+    src: "init.samsung.dp.rc",
     sub_dir: "init/hw",
     vendor: true,
 }
 
 prebuilt_etc {
     name: "init.samsung.power.rc",
-    src: "etc/init.samsung.power.rc",
+    src: "init.samsung.power.rc",
     sub_dir: "init/hw",
     vendor: true,
 }
 
 prebuilt_etc {
     name: "init.samsung.rc",
-    src: "etc/init.samsung.rc",
+    src: "init.samsung.rc",
     sub_dir: "init/hw",
     vendor: true,
 }
 
 prebuilt_etc {
     name: "init.target.rc",
-    src: "etc/init.target.rc",
+    src: "init.target.rc",
     sub_dir: "init/hw",
     vendor: true,
 }
@@ -274,6 +274,6 @@ prebuilt_etc {
 // fstab
 prebuilt_etc {
     name: "fstab.qcom",
-    src: "etc/fstab.qcom",
+    src: "fstab.qcom",
     vendor: true,
 }

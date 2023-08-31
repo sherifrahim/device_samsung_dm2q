@@ -709,10 +709,10 @@ low_ram=`getprop ro.config.low_ram`
 
 if [ "$ProductName" == "msmnile" ] || [ "$ProductName" == "kona" ] || [ "$ProductName" == "sdmshrike_au" ]; then
       # Enable ZRAM
-      configure_zram_parameters
+      # configure_zram_parameters
       configure_read_ahead_kb_values
       echo 0 > /proc/sys/vm/page-cluster
-      echo 100 > /proc/sys/vm/swappiness
+      # echo 100 > /proc/sys/vm/swappiness
 else
     arch_type=`uname -m`
 
@@ -817,13 +817,13 @@ else
     # Set allocstall_threshold to 0 for all targets.
     # Set swappiness to 100 for all targets
     echo 0 > /sys/module/vmpressure/parameters/allocstall_threshold
-    echo 100 > /proc/sys/vm/swappiness
+    # echo 100 > /proc/sys/vm/swappiness
 
     # Disable wsf for all targets beacause we are using efk.
     # wsf Range : 1..1000 So set to bare minimum value 1.
     echo 1 > /proc/sys/vm/watermark_scale_factor
 
-    configure_zram_parameters
+    # configure_zram_parameters
 
     configure_read_ahead_kb_values
 
@@ -855,34 +855,6 @@ function start_hbtp()
                 start vendor.hbtp
         fi
 }
-
-case "$target" in
-        "kalama")
-                if [ -f /sys/devices/soc0/chip_family ]; then
-                        chip_family_id=`cat /sys/devices/soc0/chip_family`
-                else
-                        chip_family_id=-1
-                fi
-
-                echo "adsprpc : chip_family_id : $chip_faily_id" > /dev/kmsg
-
-                case "$chip_family_id" in
-                    "0x7f")
-                    if [ -f /sys/devices/platform/soc/soc:qcom,msm_fastrpc/fastrpc_cdsp_status ]; then
-                        fastrpc_cdsp_status=`cat /sys/devices/platform/soc/soc:qcom,msm_fastrpc/fastrpc_cdsp_status`
-                    else
-                        fastrpc_cdsp_status=-1
-                    fi
-
-                    echo "adsprpc : fastrpc_cdsp_status : $fastrpc_cdsp_status" > /dev/kmsg
-
-                    if [ $fastrpc_cdsp_status -eq 0 ]; then
-                            setprop vendor.fastrpc.disable.cdsprpcd.daemon 1
-                            echo "adsprpc : Disabled cdsp daemon" > /dev/kmsg
-                    fi
-                esac
-                 ;;
-esac
 
 case "$target" in
     "msm7201a_ffa" | "msm7201a_surf" | "msm7627_ffa" | "msm7627_6x" | "msm7627a"  | "msm7627_surf" | \
@@ -4264,7 +4236,7 @@ case "$target" in
 
             # Turn on sleep modes.
             echo 0 > /sys/module/lpm_levels/parameters/sleep_disabled
-            echo 100 > /proc/sys/vm/swappiness
+            # echo 100 > /proc/sys/vm/swappiness
             ;;
         esac
     ;;
@@ -4820,7 +4792,7 @@ case "$target" in
 	echo N > /sys/module/lpm_levels/L3/l3-dyn-ret/idle_enabled
         # Turn on sleep modes.
         echo 0 > /sys/module/lpm_levels/parameters/sleep_disabled
-	echo 100 > /proc/sys/vm/swappiness
+	# echo 100 > /proc/sys/vm/swappiness
 	echo 120 > /proc/sys/vm/watermark_scale_factor
     ;;
 esac
