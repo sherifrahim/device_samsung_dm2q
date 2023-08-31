@@ -14,6 +14,9 @@ $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 # Inherit from dm2q device
 $(call inherit-product, device/samsung/dm2q/device.mk)
 
+TARGET_BOOT_ANIMATION_RES := 1080
+SUSHI_BOOTANIMATION  := 1080
+
 PRODUCT_DEVICE := dm2q
 PRODUCT_NAME := lineage_dm2q
 PRODUCT_BRAND := samsung
