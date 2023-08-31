@@ -83,7 +83,6 @@ system_ext/lib64/com.qualcomm.qti.ant@1.0.so
 # Atrace
 vendor/bin/hw/android.hardware.atrace@1.0-service
 vendor/etc/init/android.hardware.atrace@1.0-service.rc
-vendor/etc/vintf/manifest/android.hardware.atrace@1.0-service.xml
 
 # Audio
 system_ext/lib/vendor.qti.hardware.audiohalext@1.0.so
@@ -760,7 +759,6 @@ vendor/lib64/vendor.samsung.hardware.hyper-V2-ndk.so
 # CAS
 vendor/bin/hw/android.hardware.cas@1.2-service-lazy
 vendor/etc/init/android.hardware.cas@1.2-service-lazy.rc
-vendor/etc/vintf/manifest/android.hardware.cas@1.2-service-lazy.xml
 
 # CDSP
 vendor/bin/cdsprpcd
@@ -1127,7 +1125,6 @@ vendor/bin/hw/android.hardware.drm-service.clearkey
 vendor/bin/hw/android.hardware.drm-service.widevine
 vendor/etc/init/android.hardware.drm-service.clearkey.rc
 vendor/etc/init/android.hardware.drm-service.widevine.rc
-vendor/etc/vintf/manifest/android.hardware.drm-service.clearkey.xml
 vendor/etc/vintf/manifest/manifest_android.hardware.drm-service.widevine.xml
 vendor/lib/mediacas/libclearkeycasplugin.so
 vendor/lib/mediadrm/libdrmclearkeyplugin.so
@@ -1607,7 +1604,6 @@ vendor/bin/hw/android.hardware.sensors-service.multihal
 vendor/bin/sensors.qti
 vendor/bin/sscrpcd
 vendor/etc/init/android.hardware.sensors-service-multihal.rc
-vendor/etc/vintf/manifest/android.hardware.sensors-multihal.xml
 vendor/lib/hw/sensors.dynamic_sensor_hal.so
 vendor/lib/libhidparser.so
 vendor/lib/libsnsdiaglog.so
@@ -2252,9 +2248,7 @@ vendor/etc/ssg/ta_config.json
 vendor/etc/ssg/tz_whitelist.json
 vendor/etc/str/str_preference_data.dat
 vendor/etc/sysconfig/vendor-apex-allowlist.xml
-vendor/etc/vintf/manifest/bluetooth_audio.xml
 vendor/etc/vintf/manifest/c2_manifest_vendor_audio.xml
-vendor/etc/vintf/manifest/dumpstate-default.xml
 vendor/etc/vintf/manifest/engmode_manifest.xml
 vendor/etc/vintf/manifest/face-default-sec.xml
 vendor/etc/vintf/manifest/hyper-default-sec.xml
@@ -2291,7 +2285,6 @@ vendor/etc/vintf/manifest/vendor.samsung.hardware.tlc.snap@1.0-manifest.xml
 vendor/etc/vintf/manifest/vendor.samsung.hardware.vibrator-default.xml
 vendor/etc/vintf/manifest/vendor.samsung.hardware.wifi@2.0-service.xml
 vendor/etc/vintf/manifest/wsm_manifest.xml
-vendor/etc/vintf/manifest_kalama.xml
 vendor/etc/DsgpPolicy.csv
 vendor/etc/IPACM_Filter_cfg.xml
 vendor/etc/LVACFS_Calibration.dat
