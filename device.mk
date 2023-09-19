@@ -78,6 +78,15 @@ PRODUCT_PACKAGES += \
     init.samsung.power.rc \
     init.samsung.rc
 
+# Kernel
+TARGET_KERNEL_DIR ?= device/samsung/s23-kernel
+LOCAL_KERNEL := $(TARGET_KERNEL_DIR)/Image
+
+PRODUCT_COPY_FILES += $(LOCAL_KERNEL):kernel
+
+# Kernel Headers
+#PRODUCT_VENDOR_KERNEL_HEADERS += device/samsung/s23-kernel/headers
+
 # Namespaces
 PRODUCT_SOONG_NAMESPACES += $(LOCAL_PATH)
 
