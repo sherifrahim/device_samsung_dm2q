@@ -43,7 +43,6 @@ ro.com.google.clientidbase.tx=android-samsung-rvodxai
 ro.com.google.gmsversion=13_202304
 ro.opa.eligible_device=true
 ro.setupwizard.mode=OPTIONAL
-ro.setupwizard.rotation_locked=false
 ro.setupwizard.wifi_on_exit=false
 setupwizard.feature.enable_quick_start_flow=true
 setupwizard.feature.enable_stencil_partner_customization=1
