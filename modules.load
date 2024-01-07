@@ -192,7 +192,6 @@ sec_qc_hw_param.ko
 sec_qc_rst_exinfo.ko
 sec_qc_rdx_bootdev.ko
 sec_reboot_cmd.ko
-hdm.ko
 switch_class.ko
 switch_gpio.ko
 vibrator_vib_info.ko
@@ -345,7 +344,7 @@ qce50_dlkm.ko
 hdcp_qseecom_dlkm.ko
 qrng_dlkm.ko
 smcinvoke_dlkm.ko
-qca_cld3_qca6490.ko
+qca_cld3_kiwi_v2.ko
 cnss2.ko
 cnss_plat_ipc_qmi_svc.ko
 wlan_firmware_service.ko

@@ -318,7 +318,6 @@ sec_qc_hw_param.ko
 sec_qc_rst_exinfo.ko
 sec_qc_rdx_bootdev.ko
 sec_reboot_cmd.ko
-hdm.ko
 switch_class.ko
 switch_gpio.ko
 vibrator_vib_info.ko
