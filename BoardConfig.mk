@@ -10,7 +10,7 @@ include device/samsung/sm8550-common/BoardConfigCommon.mk
 DEVICE_PATH := device/samsung/dm2q
 
 #Kernel
-BOARD_PREBUILT_DTBOIMAGE := device/samsung/dm1q-kernel/dtbo.img
+#BOARD_PREBUILT_DTBOIMAGE := device/samsung/dm1q-kernel/dtbo.img
 BOARD_PREBUILT_DTBIMAGE_DIR := $(DEVICE_PATH)/prebuilt/dtb
 
 # Assert
@@ -27,7 +27,10 @@ BOARD_VENDOR_KERNEL_MODULES_BLOCKLIST_FILE := $(DEVICE_PATH)/modules.blocklist
 BOARD_VENDOR_RAMDISK_KERNEL_MODULES_LOAD := $(strip $(shell cat $(DEVICE_PATH)/modules.load.vendor_boot))
 BOARD_VENDOR_RAMDISK_KERNEL_MODULES_BLOCKLIST_FILE := $(DEVICE_PATH)/modules.blocklist.vendor_boot
 BOARD_VENDOR_RAMDISK_RECOVERY_KERNEL_MODULES_LOAD := $(strip $(shell cat $(DEVICE_PATH)/modules.load.recovery))
+BOARD_RECOVERY_KERNEL_MODULES_LOAD := $(strip $(shell cat $(DEVICE_PATH)/modules.load.recovery))
 BOOT_KERNEL_MODULES := $(strip $(shell cat $(DEVICE_PATH)/modules.load.recovery $(DEVICE_PATH)/modules.load.vendor_ramdisk))
+BOARD_RECOVERY_RAMDISK_KERNEL_MODULES_LOAD := $(strip $(shell cat $(DEVICE_PATH)/modules.load.recovery))
+RECOVERY_KERNEL_MODULES := $(BOARD_RECOVERY_RAMDISK_KERNEL_MODULES_LOAD)
 
 TARGET_KERNEL_EXT_MODULES := \
   qcom/opensource/mmrm-driver \
@@ -53,4 +56,5 @@ TARGET_KERNEL_EXT_MODULES := \
   qcom/opensource/graphics-kernel \
   qcom/opensource/wlan/platform \
   qcom/opensource/wlan/qcacld-3.0/.kiwi_v2 \
-  qcom/opensource/bt-kernel
+  qcom/opensource/bt-kernel \
+  qcom/opensource/touch-drivers
