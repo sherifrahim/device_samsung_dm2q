@@ -21,6 +21,8 @@ vendor/lib64/camera/com.samsung.sensormodule.2_sony_imx564.bin
 vendor/lib64/camera/com.samsung.sensormodule.3_lsi_s5k3k1.bin
 vendor/lib64/camera/com.samsung.tuned.lsi_s5k3k1.bin
 vendor/lib64/camera/com.samsung.tuned.lsi_s5kgn3.bin
+vendor/lib64/camera/com.samsung.tuned.lsi_s5k3lu.bin
+vendor/lib64/camera/com.samsung.tuned.sony_imx564.bin
 vendor/lib64/camera/components/com.qti.eisv2.so
 vendor/lib64/camera/components/com.qti.eisv3.so
 vendor/lib64/camera/components/com.qti.hvx.addconstant.so
@@ -141,6 +143,11 @@ vendor/lib64/libcom.qti.chinodeutils.so
 vendor/lib64/libtriplecam_image_optical_zoom.so
 vendor/lib64/libtriplecam_optical_zoom_control.so
 vendor/lib64/libtriplecam_video_optical_zoom.so
+vendor/lib64/libTsAwb_DM2.so
+vendor/lib64/libTsAf_DM123Q.so
+vendor/lib/libthirdparty_zoomtranslator_imp.so
+vendor/lib64/libthirdparty_zoomtranslator_imp.so
+vendor/lib64/libTsAwbFront_DM2.so
 
 # Camera firmware
 vendor/firmware/ois_mcu_stm32g_fw.bin
@@ -149,11 +156,64 @@ vendor/firmware/ois_mcu_stm32g_fw.bin
 vendor/etc/display/qdcm_calib_data_DM2_S6E3FAC_AMB655AY01.json
 vendor/firmware/DM2_S6E3FAC_AMB655AY01.dat
 
+# Fingerprint
+-vendor/lib/libsfp_sensor.so
+-vendor/lib64/libsfp_sensor.so
+-vendor/lib/libsfp_teegw.so
+-vendor/lib64/libsfp_teegw.so
+
+# Midas
+
+vendor/etc/midas/SRIBMQA_aiBLURESTIMATE_V100_FP32.tflite
+vendor/etc/midas/SRIBMQA_aiFiQA_V100_FP32.tflite
+vendor/etc/midas/SRIBMQA_aiIQA_V100_FP32.tflite
+vendor/etc/midas/SRIBMQA_aiNOISEDETECT_V100_FP32.tflite
+vendor/etc/midas/SRIBMidas_aiCLARITY2.0_2X_V200_FP16_sm8550_snpe231.dlc
+vendor/etc/midas/SRIBMidas_aiDEBLUR_V140_INT16_sm8550_snpe231.dlc
+vendor/etc/midas/SRIBMidas_aiFACERESTORE_V100_FP16_sm8550_snpe231.dlc
+vendor/etc/midas/SRIBMidas_aiHDR_V600_FP16_sm8550_snpe231.dlc
+vendor/etc/midas/SRIBMidas_aiMOIREREMOVE_Coarse_V900_FP16_sm8550_snpe231.dlc
+vendor/etc/midas/SRIBMidas_aiMOIREREMOVE_Fine_V900_FP16_sm8550_snpe231.dlc
+vendor/etc/midas/SRIBMidas_aiUPSCALER_1X_V200_FP16_sm8550_snpe231.dlc
+vendor/etc/midas/SRIBMidas_aiUPSCALER_2X_V200_FP16_sm8550_snpe231.dlc
+vendor/etc/midas/SRIBMidas_aiUPSCALER_3X_V200_FP16_sm8550_snpe231.dlc
+vendor/etc/midas/SRIBMidas_aiUPSCALER_4X_V200_FP16_sm8550_snpe231.dlc
+vendor/etc/midas/midas_config.json
+vendor/etc/midas/moire_detection/moire_detection.tflite
+
 # NFC
 vendor/etc/nfc/libnfc-nxp_RF.conf
 
 # RIL
 vendor/etc/init/init.vendor.rilcarrier.rc
+
+# Saiv
+
+vendor/saiv/ainr/db/AINRNetVendor-timestamp
+vendor/saiv/ainr/db/GRAW_3DISP_AI_NR_V5_5_4_832X1072X3_e3188-2.4.3-FP16-sm8550.dlc
+vendor/saiv/image_understanding/db/aig_classifier/aig_classifier_cnn.tf
+vendor/saiv/image_understanding/db/aig_detector/aig_detector_cnn.tflite
+vendor/saiv/image_understanding/db/hdr_verifier/hdr_verifier_cnn.dlc
+vendor/saiv/image_understanding/db/hdr_verifier/hdr_verifier_cnn.info
+vendor/saiv/image_understanding/db/moon_verifier/moon_verifier_cnn.info
+vendor/saiv/image_understanding/db/moon_verifier/moon_verifier_cnn.onnx
+vendor/saiv/image_understanding/db/sce_detector/sce_detector_cnn.tflite
+vendor/saiv/image_understanding/db/smartscan_rectifier/deep_dewarp_cnn.onnx
+vendor/saiv/image_understanding/db/srr_interaction/srr_interaction_cnn.tflite
+vendor/saiv/mpi_model/009/B2BSFNet.dlc
+vendor/saiv/mpi_model/009/B2BSFNet.prototxt
+vendor/saiv/mpi_model/1000/B2BSFNet.dlc
+vendor/saiv/mpi_model/1000/B2BSFNet.prototxt
+vendor/saiv/mpi_model/999/B2BSFNet.dlc
+vendor/saiv/mpi_model/999/B2BSFNet.prototxt
+vendor/saiv/mpi_model/B2BSFNetVendor-timestamp
+vendor/saiv/sr_engine_model/All_mnetv2_mini_p256x256_b16_00834_20210809.tflite
+vendor/saiv/sr_engine_model/nima_crop_pair_v0.0.2_mobilenetv2.tflite
+vendor/saiv/swisp_1.0/db/SWISPNetVendor-timestamp
+vendor/saiv/swisp_1.0/db/denoise_model_e214_832X1088X4_v9_4_IS_C3P123_v8_2ref_2_DS_allLosses.dlc
+vendor/saiv/swisp_1.0/db/denoise_model_e3000_832X1088X4_v10.0_S22Realgfjdndm_l115ssim35dists25lpips25.dlc
+vendor/saiv/swisp_1.0/db/denoise_model_e3000_832X1088X4_v9.4_C3P3S22Real_l113ssim35dists25lpips25.dlc
+vendor/saiv/swisp_1.0/db/denoise_model_e3100_832X1088X4_v9.5_TL_S22RealFrontgfrefisp_l115ssim35dists25lpips25.dlc
 
 # Sensors config
 vendor/etc/sensors/config/kailua_ak991x_1.json
