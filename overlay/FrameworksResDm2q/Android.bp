@@ -5,6 +5,6 @@
 //
 
 runtime_resource_overlay {
-    name: "FrameworksResDm2q",
-    device_specific: true,
+    name: "FrameworksResDm1q",
+    product_specific: true,
 }
