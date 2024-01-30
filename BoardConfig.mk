@@ -57,3 +57,5 @@ TARGET_KERNEL_EXT_MODULES := \
   qcom/opensource/wlan/qcacld-3.0/.qca6490 \
   qcom/opensource/bt-kernel \
   qcom/opensource/touch-drivers
+
+  TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
