@@ -11,13 +11,6 @@
          non-zero. -->
     <integer name="config_defaultPeakRefreshRate">120</integer>
 
-        <!-- The properties of a UDFPS sensor in pixels, in the order listed below: -->
-    <array name="config_udfps_sensor_props" translatable="false" >
-        <item>540</item> <!-- sensorLocationX -->
-        <item>1739</item> <!-- sensorLocationY -->
-        <item>91</item> <!-- sensorRadius -->
-    </array>
-
     <!-- The bounding path of the cutout region of the main built-in display.
          Must either be empty if there is no cutout region, or a string that is parsable by
          {@link android.util.PathParser}.
