@@ -12,6 +12,10 @@ PRODUCT_AAPT_PREF_CONFIG := xxxhdpi
 TARGET_SCREEN_HEIGHT := 2340
 TARGET_SCREEN_WIDTH := 1080
 
+# Fingerprint
+PRODUCT_PACKAGES += \
+    init.udfps.rc
+
 # FlipFlap
 PRODUCT_PACKAGES += \
     FlipFlap
