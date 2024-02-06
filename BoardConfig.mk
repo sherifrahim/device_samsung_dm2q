@@ -15,6 +15,10 @@ TARGET_OTA_ASSERT_DEVICE := dm2q
 # Display
 TARGET_SCREEN_DENSITY := 450
 
+#Kernel
+BOARD_PREBUILT_DTBOIMAGE := device/samsung/dm1q-kernel/dtbo.img
+BOARD_PREBUILT_DTBIMAGE_DIR := $(DEVICE_PATH)/prebuilt/dtb
+
 # Kernel Modules
 BOARD_SYSTEM_KERNEL_MODULES := $(strip $(shell cat $(DEVICE_PATH)/modules.load.system_dlkm))
 BOARD_SYSTEM_KERNEL_MODULES_LOAD := $(strip $(shell cat $(DEVICE_PATH)/modules.load.system_dlkm))
