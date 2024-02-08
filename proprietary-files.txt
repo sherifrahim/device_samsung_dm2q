@@ -279,7 +279,7 @@ vendor/etc/midas/moire_detection/moire_detection.tflite
 vendor/etc/nfc/libnfc-nxp_RF.conf
 
 # RIL
-vendor/etc/init/init.vendor.rilcarrier.rc
+#vendor/etc/init/init.vendor.rilcarrier.rc
 
 # Saiv
 
