@@ -9,6 +9,10 @@ include device/samsung/sm8550-common/BoardConfigCommon.mk
 
 DEVICE_PATH := device/samsung/dm2q
 
+#Kernel
+BOARD_PREBUILT_DTBOIMAGE := device/samsung/dm1q-kernel/dtbo.img
+BOARD_PREBUILT_DTBIMAGE_DIR := $(DEVICE_PATH)/prebuilt/dtb
+
 # Assert
 TARGET_OTA_ASSERT_DEVICE := dm2q
 
